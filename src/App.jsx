@@ -1,4 +1,3 @@
-// CryptoConverter.js
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
@@ -70,8 +69,8 @@ const CryptoConverter = () => {
 
       <form>
         <label>Quantity:</label>
-        <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} />
-        <label> Cryptocurrency:</label>
+        <input type="number" value={quantity} onChange={(e) => setQuantity(+e.target.value?+e.target.value:1)} />
+        <label> Crypto Currency:</label>
         <select value={cryptoCurrency} onChange={(e) => setCryptoCurrency(e.target.value)}>
           {cryptoCurrencies.map((crypto) => (
             <option key={crypto.id} value={crypto.id}>
